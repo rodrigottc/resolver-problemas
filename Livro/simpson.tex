@@ -1,0 +1,111 @@
+%\documentclass[a4paper, 11pt, addpoints]{exam}
+%%\documentclass[a4paper, 11pt, addpoints, answers]{exam}  % Desconmente esta linha, para ver as respostas, e comente a de cima
+%\usepackage{listaufersa}
+%\usepackage{listings} % Mostrar código-fonte
+%\usepackage[brazil]{babel}
+%\usepackage{multicol}
+%\usepackage{booktabs}
+%\usepackage{hyperref}
+%
+%\setlength{\columnsep}{25pt}
+%\lstdefinestyle{js}{
+%    basicstyle=\ttfamily,
+%    breaklines=true,
+%    breakatwhitespace=true,
+%    tabsize=1,
+%    resetmargins=true,
+%    xleftmargin=0pt,
+%    frame=none
+%}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\pointpoints{Ponto}{Pontos}
+%
+%
+%
+%
+%
+%\begin{document}
+%
+%
+%
+%%%%%%%%%% Informações sobre o curso %%%%%%%%%%%%%
+%
+%
+%\nomeProfessor{Rodrigo Toledo Teixeira Câmara}
+%\nomeCurso{Bacharelado em Ciências e Tecnologias}
+%\nomeDisciplina{Cálculo Numérico}
+%\semestre{5}   % Deixe em branco se for para mais de um semestre (recuperação)
+%\dataDaProva{2016.2}
+%\tipoAvaliacao{lista da aula 14}
+%
+%\info
+%\vspace{-0.5 cm}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%\begin{questions}
+%%\begin{multicols}{2}
+
+\begin{ex}
+Calcule uma aproximação do número $I$, dado por $$I=\int_0^4 x^2 dx,$$ utilizando a regra de 1/3 de Simpson. Em seguida, estime o erro. Por fim, calcule $I$ utilizando o Teorema Fundamental do Cálculo para confirmar se a previsão do erro está razoável. Compare os resultados com os obtidos com a integração pela regra do trapézio (questão 1 da lista 13).
+\end{ex}
+
+\begin{ex}
+Utilizando a regra de 1/3 de Simpson repetida, calcule o valor aproximado do número $\int_0^6 (\cos(x) + x)dx$, usando $6$ pontos. Em seguida, estime o erro desta aproximação. Compare com os resultados obtidos com a integração pela regra dos trapézios repetidos (questão 2 da lista 13).
+\end{ex}
+
+\begin{ex}
+Considere a função $f$ calculada em alguns pontos, descritos pela tabela \ref{inte}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\centering
+\caption{Alguns pontos da função $f$.}
+\label{inte}
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+$x$    & 0    & 1    & 2    & 3    & 4    & 5    & 6    \\ \midrule
+$f(x)$ & 0.21 & 0.32 & 0.42 & 0.51 & 0.82 & 0.91 & 1.12 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Calcule $\int_0^6 f(x)dx$ pela regra de 1/3 de Simpson repetida.
+\end{ex}
+
+
+\begin{ex}
+É possível estime $\int_0^1 3e^{-x}dx$ utilizando a regra de 1/3 de Simpson repetida com $h=1/5$? Se for, calcule. Caso contrário, sugira outro valor de $h$.
+\end{ex}
+
+
+\begin{ex}
+Em quantos subintervalos, no mínimo, precisamos dividir o domínio de integração $[0,2]$ para que o erro da integração pela regra de 1/3 de Simpson repetida de $\int_0^{2}e^x$ seja menor que $0.01$?
+\end{ex}
+
+\begin{ex}
+Considere a função $f$ dada pela tabela \ref{diferente}.
+
+\begin{table}[htb]
+\centering
+\caption{Alguns pontos da função $f$.}
+\label{diferente}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+$x$    & 0.1    & 0.2    	& 0.33    & 0.5    \\ \midrule
+$f(x)$ & -2.3 	& -1.6		& -1.1 & -0.4  \\ \bottomrule
+\end{tabular}
+\end{table}
+\end{ex}
+Calcule $\int_{0.1}^{0.5}f(x)dx$ (atenção: observe que os pontos do domínio na tabela \emph{não estão} igualmente espaçados).
+%\end{questions}
+%
+%\end{document}

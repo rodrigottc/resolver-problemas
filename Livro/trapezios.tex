@@ -1,0 +1,100 @@
+%\documentclass[a4paper, 11pt, addpoints]{exam}
+%%\documentclass[a4paper, 11pt, addpoints, answers]{exam}  % Desconmente esta linha, para ver as respostas, e comente a de cima
+%\usepackage{listaufersa}
+%\usepackage{listings} % Mostrar código-fonte
+%\usepackage[brazil]{babel}
+%\usepackage{multicol}
+%\usepackage{booktabs}
+%\usepackage{hyperref}
+%
+%\setlength{\columnsep}{25pt}
+%\lstdefinestyle{js}{
+%    basicstyle=\ttfamily,
+%    breaklines=true,
+%    breakatwhitespace=true,
+%    tabsize=1,
+%    resetmargins=true,
+%    xleftmargin=0pt,
+%    frame=none
+%}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\pointpoints{Ponto}{Pontos}
+%
+%
+%
+%
+%
+%\begin{document}
+%
+%
+%
+%%%%%%%%%% Informações sobre o curso %%%%%%%%%%%%%
+%
+%
+%\nomeProfessor{Rodrigo Toledo Teixeira Câmara}
+%\nomeCurso{Bacharelado em Ciências e Tecnologias}
+%\nomeDisciplina{Cálculo Numérico}
+%\semestre{5}   % Deixe em branco se for para mais de um semestre (recuperação)
+%\dataDaProva{2016.2}
+%\tipoAvaliacao{lista da aula 13}
+%
+%\info
+%\vspace{-0.5 cm}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%\begin{questions}
+%\begin{multicols}{2}
+
+\begin{ex}
+Calcule uma aproximação do número $I$, dado por $$I=\int_0^4 x^2 dx,$$ utilizando a regra dos trapézios. Em seguida, estime o erro. Por fim, calcule $I$ utilizando o Teorema Fundamental do Cálculo para confirmar se a previsão do erro está razoável.
+\end{ex}
+
+\begin{ex}
+Utilizando a regra dos trapézios repetidos, calcule o valor aproximado do número $\int_0^6 (\cos(x) + x)dx$, usando $6$ pontos. Em seguida, estime o erro desta aproximação.
+\end{ex}
+
+\begin{ex}
+Considere a função $f$ calculada em alguns pontos, descritos pela tabela \ref{trap.inte}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\centering
+\caption{Alguns pontos da função $f$.}
+\label{trap.inte}
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+$x$    & 0    & 1    & 2    & 3    & 4    & 5    & 6    \\ \midrule
+$f(x)$ & 0.21 & 0.32 & 0.42 & 0.51 & 0.82 & 0.91 & 1.12 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Calcule $\int_0^6 f(x)dx$.
+\end{ex}
+
+
+\begin{ex}
+Estime $\int_0^1 3e^{-x}dx$ utilizando a regra dos trapézios repetidos, com $h=1/5$.
+\end{ex}
+
+
+\begin{ex}
+Em quantos subintervalos, no mínimo, precisamos dividir o domínio de integração $[0,2]$ para que o erro da integração de $\int_0^{2}e^x$ seja menor que $0.01$?
+\end{ex}
+
+\begin{ex}
+Refaça a questão 3 da lista extra da segunda unidade utilizando a técnica dos trapézios repetidos. Quantos pontos devemos tabelar para que o erro seja menor que $0.01 m/s^2$ na análise destes quatro segundos de voo?
+\end{ex}
+
+%\end{questions}
+%
+%\end{document}

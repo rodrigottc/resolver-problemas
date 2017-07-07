@@ -1,0 +1,167 @@
+%\documentclass[a4paper, 11pt, addpoints]{exam}
+%%\documentclass[a4paper, 11pt, addpoints, answers]{exam}  % Desconmente esta linha, para ver as respostas, e comente a de cima
+%\usepackage{listaufersa}
+%\usepackage{listings} % Mostrar código-fonte
+%\usepackage[brazil]{babel}
+%\usepackage{multicol}
+%\usepackage{booktabs}
+%\usepackage{hyperref}
+%
+%\setlength{\columnsep}{25pt}
+%\lstdefinestyle{js}{
+%    basicstyle=\ttfamily,
+%    breaklines=true,
+%    breakatwhitespace=true,
+%    tabsize=1,
+%    resetmargins=true,
+%    xleftmargin=0pt,
+%    frame=none
+%}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\pointpoints{Ponto}{Pontos}
+%
+%
+%
+%
+%
+%\begin{document}
+%
+%
+%
+%%%%%%%%%% Informações sobre o curso %%%%%%%%%%%%%
+%
+%
+%\nomeProfessor{Rodrigo Toledo Teixeira Câmara}
+%\nomeCurso{Bacharelado em Ciências e Tecnologias}
+%\nomeDisciplina{Cálculo Numérico}
+%\semestre{5}   % Deixe em branco se for para mais de um semestre (recuperação)
+%\dataDaProva{2016.2}
+%\tipoAvaliacao{lista da aula 12}
+%
+%\info
+%\vspace{-0.5 cm}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%\begin{questions}
+%%\begin{multicols}{2}
+%
+
+
+
+%\begin{ex}
+%Um grupo de alunos de biologia estudou a bioquímica de uma certa espécie de alga, a \emph{Chlorophyta Caulerpa cupressoides}. Eles observaram que a salinidade (em $PSU$) da água influencia nas atividades biológicas da alga, em especial na síntese de uma substância chamada \emph{polissacarimídia} (em milimol por hora). Os resultados das experiências estão descritos na tabela \ref{alga}.
+%
+%% Please add the following required packages to your document preamble:
+%% \usepackage{booktabs}
+%\begin{table}[htb]
+%\centering
+%\caption{Experiências que relacionam a capacidade da alga \emph{Chlorophyta Caulerpa cupressoides} sintetizar polissacarimídia em função da salinidade.}
+%\label{alga}
+%\begin{tabular}{@{}ll@{}}
+%\toprule
+%Salinidade & Síntese de polissacarimídia \\ \midrule
+%3.2        & 0.9                         \\
+%0.6        & 3.9                         \\
+%1.3        & 2.8                         \\
+%2.3        & 2.1                         \\
+%3.1        & 1.6                         \\ \bottomrule
+%\end{tabular}
+%\end{table}
+%Ao ajustar estes dados por uma curva hiperbólica, obtém-se $\varphi(x)=1/(0.3x+0.1)$. Ao se ajustar por uma reta, encontra-se $\varphi(x)=-x+4.3$. Segundo o critério dos mínimos dos desvios quadrados, qual dessas duas curvas se ajusta melhor a este fenômeno biológico? 
+%\end{ex}
+
+
+\begin{ex}
+A tabela \ref{condutividade} relaciona a condutividade elétrica específica de um certo material em função da temperatura. Sabendo que a equação $$\lambda=b^{t}a$$ relaciona essas duas grandezas, determine as constantes $b$ e $a$ deste material.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\centering
+\caption{Condutividade elétrica $\lambda$ em função da temperatura (em graus Celsius).}
+\label{condutividade}
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+$t$       & 14.5 & 30.0  & 64.5  & 74.5  & 86.7  & 94.5  & 98.9  \\ \midrule
+$\lambda$ & 0    & 0.004 & 0.018 & 0.029 & 0.051 & 0.073 & 0.090 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\end{ex}
+
+
+\begin{ex}
+Ao ser dada a largada de uma corrida de Fórmula 1, os sensores instalados no carro de uma determinada equipe emitiram os dados descritos na tabela \ref{f1}:
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\centering
+\caption{A relação consumo/velocidade do primeiro segundo de uma corrida de Fórmula 1.}
+\label{f1}
+\begin{tabular}{@{}llr@{}}
+\toprule
+Tempo ($s$) & Consumo ($l/s$) & Velocidade ($km/h$) \\ \midrule
+0.1         & 0.015           & 5.000               \\
+0.2         & 0.019           & 5.727               \\
+0.3         & 0.024           & 6.681               \\
+0.4         & 0.031           & 7.979               \\
+0.5         & 0.041           & 9.831               \\
+0.6         & 0.057           & 12.643              \\
+0.7         & 0.083           & 17.292              \\
+0.8         & 0.133           & 25.988              \\
+0.9         & 0.247           & 45.633              \\
+1.0         & 0.599           & 106.200             \\ \bottomrule
+\end{tabular}
+\end{table}
+Faça hipóteses para a modelagem do consumo em função do tempo e para a modelagem da velocidade em função do tempo por meio do método dos mínimos quadrados.
+ 
+\end{ex}
+\begin{ex}
+Em 1965, Gordon Moore, um dos fundadores da \emph{Intel}, propôs uma previsão para a crescente miniaturização dos \emph{chips} que ficou conhecida como a ``Lei de Moore''. Em sua ``profecia'', Moore afirmava que o número de transistores dos \emph{chips} teriam o número duplicado a cada 18 meses. A tabela \ref{chips} relaciona alguns \emph{chips} com o ano de lançamento.
+
+
+De posse destes dados, proponha uma função que estabeleça uma previsão da capacidade dos \emph{chips} de 2020. (Dica: procure uma função $N=f(a)$, onde $N$ é o número de transistores e $a$ é o ano. Antes de tudo, transforme o eixo de transistores para $log_{10}(N)$).
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\centering
+\caption{Relação entre ano de lançamento de \emph{chips} e o número de transistores.}
+\label{chips}
+\begin{tabular}{@{}llr@{}}
+\toprule
+\emph{Chip}        & Ano  & Número de transistores \\ \midrule
+4004                 & 1971 & 2 250                  \\
+8008                 & 1972 & 3 300                  \\
+8080                 & 1974 & 6 000                  \\
+8086                 & 1978 & 29 000                 \\
+80286                & 1982 & 134 000                \\
+80386                & 1986 & 275 000                \\
+80486                & 1989 & 1 200 000              \\
+\emph{Pentium}     & 1993 & 3 100 000              \\
+\emph{Pentium II}  & 1997 & 7 500 000              \\
+\emph{Pemtium III} & 1999 & 9 500 000              \\
+\emph{Pentium 4}   & 2000 & 42 000 000             \\ \bottomrule
+\end{tabular}
+
+
+Fonte: BURIAN, Reinaldo; DE LIMA, Antonio Carlos; JÚNIOR, Annibal Hetem. \emph{Cálculo numérico}. Livros Técnicos e Científicos, 2007.
+\end{table}
+
+\end{ex}
+
+%
+%\end{questions}
+%
+%\end{document}

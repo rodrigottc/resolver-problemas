@@ -1,0 +1,300 @@
+%\documentclass[a4paper, 11pt, addpoints,answers]{exam}
+%%\documentclass[a4paper, 11pt, addpoints, answers]{exam}  % Desconmente esta linha, para ver as respostas, e comente a de cima
+%\usepackage{listaufersa}
+%\usepackage{listings} % Mostrar código-fonte
+%\usepackage[brazil]{babel}
+%\usepackage{multicol}
+%\usepackage{booktabs}
+%\usepackage{hyperref}
+%
+%
+%\usepackage{color}
+%
+%\setlength{\columnsep}{25pt}
+%\lstdefinestyle{js}{
+%    basicstyle=\ttfamily,
+%    breaklines=true,
+%    breakatwhitespace=true,
+%    tabsize=1,
+%    resetmargins=true,
+%    xleftmargin=0pt,
+%    frame=none
+%}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\pointpoints{Ponto}{Pontos}
+
+%\begin{document}
+%
+%
+%%%%%%%%%% Informações sobre o curso %%%%%%%%%%%%%
+%
+%
+%\nomeProfessor{Rodrigo Toledo Teixeira Câmara}
+%\nomeCurso{Bacharelado em Ciências e Tecnologias}
+%\nomeDisciplina{Cálculo Numérico}
+%\semestre{5}   % Deixe em branco se for para mais de um semestre (recuperação)
+%\dataDaProva{2016.2}
+%\tipoAvaliacao{lista da aula 04}
+%
+%\info
+%\vspace{-0.5 cm}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\begin{questions}
+%\begin{multicols}{2}
+
+
+\begin{ex}
+Considere o sistema
+$$\begin{cases}
+2x-y+3z+8w=-12\\
+5y+z+w=17\\
+4z-2w=10\\
+10w=30
+\end{cases}.$$
+A matriz do coeficientes pode ser escrita como matriz triangular? Caso possa, encontre a solução. Caso contrário, aplique o método de Gauss para triangularizar este sistema.
+\begin{sol}
+Pode sim ser escrita como sistema triangular. No caso,
+$$\begin{bmatrix}
+1&-1&3&8\\
+0&5&1&1\\
+0&0&4&-2\\
+0&0&0&10
+\end{bmatrix}.$$
+A solução é $X=\begin{bmatrix}
+-46&2&4&3\end{bmatrix}^t$. 
+\end{sol}
+\end{ex}
+
+
+\begin{ex}\label{sistema}
+Considere o seguinte sistema linear:
+$$\begin{bmatrix}
+3	&2	&3\\
+-1	&4	&6\\
+10	&2	&12
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\x_2\\x_3
+\end{bmatrix}=
+\begin{bmatrix}
+9\\32\\-2
+\end{bmatrix}$$
+\begin{enumerate}[label=\alph*)]
+\item Resolva este sistema linear pelo método de eliminação de Gauss.\label{gauss}
+\item Resolva este sistema pelo método da decomposição LU.
+\item Resolva este sistema linear pelo método de eliminação de Gauss por meio do \emph{software Visual Cálculo Numérico}\footnote{Disponível gratuitamente no SIGAA.}. Configure o {\tt Formato dos Números} (disponível no menu {\tt Utilitários}) para a Notação Científica (Padrão em latino), com {\tt Precisão do número em casas decimais} ajustado para ``4''.
+\end{enumerate}
+\begin{sol}
+\begin{enumerate}[label=\alph*)]
+\item Primeiro reescrevo o sistema linear na forma da matriz aumentada,
+$$\begin{bmatrix}
+{\color{red}3}	& 2 & 3 & 9 \\
+-1			& 4 & 6	& 32 \\
+10			& 2 & 12 & -2 
+\end{bmatrix}.$$
+O pivô é o elemento $a_{11}$, pintado de vermelho. Vou usar este pivô para ``zerar'' todos os elementos abaixo dele, por meio das \emph{operações fundamentais}.
+
+O primeiro passo é realizar as operações fundamentais $$L_2\leftarrow L_2 - \frac{-1}{{\color{red}3}}L_1$$ e $$L_3\leftarrow L_3 - \frac{10}{{\color{red}3}}L_1.$$ A matriz fica
+$$\begin{bmatrix}
+3			& 2 & 3 & 9 \\
+0			& {\color{red}14/3} & 7	& 35 \\
+0			& -14/3 & 2 & -32 
+\end{bmatrix}.$$
+
+
+O segundo passo é usar o pivô $14/3$ para zerar todos os elementos abaixo dele. A operação fundamental é $$L_3\leftarrow L_3 - \frac{-14/3}{{\color{red}14/3}}L_1.$$
+A matriz fica
+$$\begin{bmatrix}
+3			& 2 & 3 & 9 \\
+0			& 14/3 & 7	& 35 \\
+0			& 0 & 9 & 3 
+\end{bmatrix},$$
+que é uma matriz triangular, fácil de resolver.
+
+\item A matriz $A$, dada por $$A=\begin{bmatrix}
+3	&2	&3\\
+-1	&4	&6\\
+10	&2	&12
+\end{bmatrix},$$
+pode ser decomposta de maneira única como produto de uma matriz inferior $L$ e uma matriz superior $U$ desta forma:
+$$\begin{bmatrix}
+3	&2	&3\\
+-1	&4	&6\\
+10	&2	&12
+\end{bmatrix}=
+\begin{bmatrix}
+{\textcolor{red}1}	&{\textcolor{red}0}	&{\textcolor{red}0}\\
+{\textcolor{blue}-1/3 }	&{\textcolor{red}1}	&{\textcolor{red}0}\\
+{\textcolor{blue} 10/3 }	&{\textcolor{blue}-1}	&{\textcolor{red}1}
+\end{bmatrix}\times 
+\begin{bmatrix}
+3	&2	&3\\
+0	&14/3	&7\\
+0	&0	&9
+\end{bmatrix}.$$
+Para construir a matriz $L$, eu tomei os {\textcolor{blue} multiplicadores} que foram utilizados no algoritmo de eliminação de Gauss. A matriz $U$ é simplesmente o resultado do algoritmo de Gauss.
+
+
+O problema original pode ser reescrito como 
+$$\begin{bmatrix}
+{\textcolor{red}1}	&{\textcolor{red}0}	&{\textcolor{red}0}\\
+{\textcolor{blue}-1/3 }	&{\textcolor{red}1}	&{\textcolor{red}0}\\
+{\textcolor{blue} 10/3 }	&{\textcolor{blue}-1}	&{\textcolor{red}1}
+\end{bmatrix}\times 
+\begin{bmatrix}
+3	&2	&3\\
+0	&14/3	&7\\
+0	&0	&9
+\end{bmatrix}\times
+\begin{bmatrix}
+x_1\\x_2\\x_3
+\end{bmatrix}=
+\begin{bmatrix}
+9\\32\\-2
+\end{bmatrix}.$$
+Agora precisamos apenas resolver os dois sistemas lineares \emph{triangulares}: o sistema $Ly=b$,
+$$\begin{bmatrix}
+{\textcolor{red}1}	&{\textcolor{red}0}	&{\textcolor{red}0}\\
+{\textcolor{blue}-1/3 }	&{\textcolor{red}1}	&{\textcolor{red}0}\\
+{\textcolor{blue} 10/3 }	&{\textcolor{blue}-1}	&{\textcolor{red}1}
+\end{bmatrix}\times 
+\begin{bmatrix}
+a\\b\\c
+\end{bmatrix}=
+\begin{bmatrix}
+9\\32\\-2
+\end{bmatrix},$$
+cuja solução é $a=9, b=35, c=3$, e este outro, $Ux=y$,
+$$\begin{bmatrix}
+3	&2	&3\\
+0	&14/3	&7\\
+0	&0	&9
+\end{bmatrix}\times
+\begin{bmatrix}
+x_1\\x_2\\x_3
+\end{bmatrix}=
+\begin{bmatrix}
+9\\35\\3
+\end{bmatrix}
+$$
+cuja solução (que é a solução que procuramos) é $x_1=-2, x_2=7, x_3=1/3$.
+\end{enumerate}
+\end{sol}
+
+
+
+
+\end{ex}
+
+\begin{ex}
+Aplique, se for possível, a fatoração LU na matriz
+$$\begin{bmatrix}
+2&3\\
+4&5
+\end{bmatrix}.$$
+Utilize esta fatoração para resolver estes dois sistemas lineares:
+$$\begin{cases}
+2x+3y=16\\
+4x+5y=26
+\end{cases}\textnormal{ e }
+\begin{cases}
+2x+3y=5\\
+4x+5y=9
+\end{cases}.$$
+\begin{sol}
+A matriz $A$ dos coeficientes, dada por $\begin{bmatrix}
+2&3\\4&5
+\end{bmatrix}$, pode ser decomposta como
+$$\begin{bmatrix}
+2&3\\4&5
+\end{bmatrix}=\begin{bmatrix}
+1&0\\2&1
+\end{bmatrix}\begin{bmatrix}
+2&3\\0&-1
+\end{bmatrix}.$$
+
+A solução do primeiro sistema é $X=\begin{bmatrix}
+1&1
+\end{bmatrix}^t$. A solução do segundo sistema é $X=\begin{bmatrix}
+-1&6
+\end{bmatrix}^t$.
+\end{sol}
+\end{ex}
+
+\begin{ex}
+Considere que, ao final da primeira iteração do método de eliminação de Gauss, tenhamos o seguinte sistema linear:
+$$\begin{bmatrix}
+2	&8	&7	&7	\\
+0	&1	&6	&1	\\
+0	&3	&3	&1	\\
+0	&-4	&1	&12	
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+x_4
+\end{bmatrix}=
+\begin{bmatrix}
+24\\8\\7\\9
+\end{bmatrix}.$$
+Se estivermos utilizando a estratégia do pivoteamento parcial, qual elemento escolheremos como pivô da segunda iteração?
+\begin{sol}
+$-4$.
+\end{sol}
+\end{ex}
+
+
+\begin{ex}
+Considere o seguinte sistema linear:\label{sistemainstavel}
+$$\begin{bmatrix}
+1\times 10^{-20}	&1\\
+1					&-1\\
+\end{bmatrix}
+\begin{bmatrix}
+x\\y
+\end{bmatrix}=
+\begin{bmatrix}
+1\\0
+\end{bmatrix}$$
+\begin{enumerate}
+\item Calcule a solução deste sistema em uma folha de papel. Simplifique as frações somente no final, quando for estipular a solução. \label{quebra}
+\item Calcule a solução desse sistema novamente, mas dessa vez utilizando o \emph{software Visual Cálculo Numérico}. Configure o {\tt Formato dos Números} para a Notação Científica (Padrão em latino), com {\tt Precisão do número em casas decimais} configurado para ``4''. O resultado foi o mesmo encontrado no item \ref{quebra}? 
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Resolva novamente o sistema mostrado na questão \ref{sistemainstavel}, com o \emph{Visual Cálculo Numérico} utilizando o pivoteamento parcial. Comente o resultado.
+\end{ex}
+
+
+\begin{ex}
+Resolva os sistemas lineares abaixo pelo \emph{Visual Cálculo Numérico}, com 2 dígitos de precisão, com pivoteamento parcial e depois sem pivoteamento parcial. Compare as soluções.
+\begin{enumerate}
+
+\item $$\begin{cases}
+0.21x+0.33y=0.54\\
+0.70x+0.24y=0.94
+\end{cases}.$$
+\item $$\begin{cases}
+0.11x-0.13y+0.20z=-0.02\\
+0.10x+0.36y+0.45z=0.25\\
+0.50x-0.01y+0.30z=-0.70
+\end{cases}.$$
+\end{enumerate}
+
+\end{ex}
+
+
+
+

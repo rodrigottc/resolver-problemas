@@ -1,0 +1,16 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\author{Rodrigo Câmara}
+%\title{O artigo científico: o que come, onde vive?}
+\begin{document}
+\maketitle
+%\section{Introdução}
+Olá mundo.
+\end{document}

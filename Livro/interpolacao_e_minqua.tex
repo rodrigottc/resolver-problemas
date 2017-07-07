@@ -1,0 +1,103 @@
+%\documentclass[a4paper, 11pt, addpoints]{exam}
+%%\documentclass[a4paper, 11pt, addpoints, answers]{exam}  % Desconmente esta linha, para ver as respostas, e comente a de cima
+%\usepackage{listaufersa}
+%\usepackage{listings} % Mostrar código-fonte
+%\usepackage[brazil]{babel}
+%\usepackage{multicol}
+%\usepackage{booktabs}
+%\usepackage{hyperref}
+%
+%\setlength{\columnsep}{25pt}
+%\lstdefinestyle{js}{
+%    basicstyle=\ttfamily,
+%    breaklines=true,
+%    breakatwhitespace=true,
+%    tabsize=1,
+%    resetmargins=true,
+%    xleftmargin=0pt,
+%    frame=none
+%}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\pointpoints{Ponto}{Pontos}
+%
+%
+%
+%
+%
+%\begin{document}
+%
+%
+%
+%%%%%%%%%% Informações sobre o curso %%%%%%%%%%%%%
+%
+%
+%\nomeProfessor{Rodrigo Toledo Teixeira Câmara}
+%\nomeCurso{Bacharelado em Ciências e Tecnologias}
+%\nomeDisciplina{Cálculo Numérico}
+%\semestre{5}   % Deixe em branco se for para mais de um semestre (recuperação)
+%\dataDaProva{2016.2}
+%\tipoAvaliacao{lista da aula 11}
+%
+%\info
+%\vspace{-0.5 cm}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%\begin{questions}
+%\begin{multicols}{2}
+
+\begin{ex}
+Dada a tabela \ref{experimentos} de pontos experimentais, obtenha a reta que melhor ajusta os pontos através do método dos mínimos quadrados. Em seguida, calcule o resíduo quadrado.
+\begin{table}[hbt]
+\centering
+\caption{Valores obtidos em uma dada experiência.}
+\label{experimentos}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+$x$	& 1	& 2   & 3		& 4   & 5          \\ \midrule
+$f(x)$		& 2.2	& 3.3 & 4.2	& 5.1 & 6.3   \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\end{ex}
+
+\begin{ex}
+A tabela \ref{sen} traz alguns valores da função trigonométrica \emph{seno}:
+\begin{table}[hbt]
+\centering
+\caption{Cálculo de alguns valores da função \emph{seno}.}
+\label{sen}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+$x$ em radianos	& 0	& 0.05   & 0.1		& 0.15   & 0.2          \\ \midrule
+$\sin(x)$		& 0	& 0.0500 & 0.0998	& 0.1494 & 0.1987   \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+Ajuste estes pontos a uma reta e a uma parábola utilizando o método dos mínimos quadrados. Qual se ajustou melhor?
+\end{ex}
+
+%
+\begin{ex}
+Construa uma tabela com os valores de $e^x$ para $x_k=\frac{k}{5}$, com $k\in\{1,...,5\}$ e determine o valor aproximado de $e^{0.23}$ usando
+\begin{enumerate}
+\item Polinômio interpolador,
+\item Ajuste de curvas, utilizando uma parábola.
+\end{enumerate} 
+\end{ex}
+
+
+
+
+%\end{questions}
+%
+%\end{document}

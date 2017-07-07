@@ -1,0 +1,146 @@
+%\documentclass[a4paper, 11pt, addpoints]{exam}
+%\documentclass[a4paper, 11pt, addpoints, answers]{exam}  % Desconmente esta linha, para ver as respostas, e comente a de cima
+%\usepackage{listaufersa}
+%\usepackage{listings} % Mostrar código-fonte
+%\usepackage[brazil]{babel}
+%\usepackage{multicol}
+%\usepackage{booktabs}
+%\usepackage{hyperref}
+%
+%\setlength{\columnsep}{25pt}
+%\lstdefinestyle{js}{
+%    basicstyle=\ttfamily,
+%    breaklines=true,
+%    breakatwhitespace=true,
+%    tabsize=1,
+%    resetmargins=true,
+%    xleftmargin=0pt,
+%    frame=none
+%}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\pointpoints{Ponto}{Pontos}
+%
+%
+%
+%
+%
+%\begin{document}
+%
+%
+%
+%%%%%%%%%% Informações sobre o curso %%%%%%%%%%%%%
+%
+%
+%\nomeProfessor{Rodrigo Toledo Teixeira Câmara}
+%\nomeCurso{Bacharelado em Ciências e Tecnologias}
+%\nomeDisciplina{Cálculo Numérico}
+%\semestre{5}   % Deixe em branco se for para mais de um semestre (recuperação)
+%\dataDaProva{2016.2}
+%\tipoAvaliacao{lista da aula 11}
+%
+%\info
+%\vspace{-0.5 cm}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%\begin{questions}
+%\begin{multicols}{2}
+
+\begin{ex}
+Dada a tabela \ref{experimentos.residuo} de pontos experimentais, obtenha a reta que melhor ajusta os pontos através do método dos mínimos quadrados. Em seguida, calcule o resíduo quadrado.
+\begin{table}[hbt]
+\centering
+\caption{Valores obtidos em uma dada experiência.}
+\label{experimentos.residuo}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+$x$	& 1	& 2   & 3		& 4   & 5          \\ \midrule
+$f(x)$		& 2.2	& 3.3 & 4.2	& 5.1 & 6.3   \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\end{ex}
+
+%\begin{ex}
+%A tabela \ref{sen} traz alguns valores da função trigonométrica \emph{seno}:
+%\begin{table}[hbt]
+%\centering
+%\caption{Cálculo de alguns valores da função \emph{seno}.}
+%\label{sen}
+%\begin{tabular}{@{}llllll@{}}
+%\toprule
+%$x$ em radianos	& 0	& 0.05   & 0.1		& 0.15   & 0.2          \\ \midrule
+%$\sin(x)$		& 0	& 0.0500 & 0.0998	& 0.1494 & 0.1987   \\ \bottomrule
+%\end{tabular}
+%\end{table}
+%
+%
+%Ajuste estes pontos a uma reta e a uma parábola utilizando o método dos mínimos quadrados. Qual se ajustou melhor?
+%\end{ex}
+
+\begin{ex}
+Considere a tabela \ref{cidade} de observações do consumo de água em uma cidade de 20 000 habitantes.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\centering
+\caption{Consumo de água em uma cidade ao longo do tempo}
+\label{cidade}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Dia     & 1    & 2    & 3    & 4    & 5    \\ \midrule
+Consumo & 11.0 & 10.5 & 10.3 & 10.2 & 10.2 \\ \bottomrule
+\end{tabular}
+\end{table}
+Considere duas estratégias para prever o consumo de água:
+\begin{enumerate}
+\item Interpole a função nos dois últimos períodos, 3 e 4 (obtenha, portanto, uma reta) e use este polinômio interpolador para prever o consumo no dia 5. \label{poliagua}
+\item Ajuste uma reta, pelo método dos mínimos quadrados, aos três últimos períodos (dias 2, 3 e 4) e use esta reta para prever o consumo no dia 5. \label{quadagua} 
+\end{enumerate}
+Observe as previsões para o dia 5 que você obteve nos itens \ref{poliagua} e \ref{quadagua} e compare com o valor ``real'' do consumo do dia 5, mostrado na tabela. Qual das duas estratégias apresentou uma previsão melhor?
+\end{ex}
+
+\begin{ex}
+Construa uma tabela com os valores de $e^x$ para $x_k=\frac{k}{5}$, com $k\in\{1,...,5\}$ e determine o valor aproximado de $e^{0.23}$ usando
+\begin{enumerate}
+\item Polinômio interpolador,
+\item Ajuste de curvas, utilizando uma parábola.
+\end{enumerate} 
+\end{ex}
+\subsubsection{Problemas}
+\begin{ex}
+Um grupo de alunos de biologia estudou a bioquímica de uma certa espécie de alga, a \emph{Chlorophyta Caulerpa cupressoides}. Eles observaram que a salinidade (em $PSU$) da água influencia nas atividades biológicas da alga, em especial na síntese de uma substância chamada \emph{polissacarimídia} (em milimol por hora). Os resultados das experiências estão descritos na tabela \ref{alga}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\centering
+\caption{Experiências que relacionam a capacidade da alga \emph{Chlorophyta Caulerpa cupressoides} sintetizar polissacarimídia em função da salinidade.}
+\label{alga}
+\begin{tabular}{@{}cc@{}}
+\toprule
+Salinidade & Síntese de polissacarimídia \\ \midrule
+3.2        & 0.9                         \\
+0.6        & 3.9                         \\
+1.3        & 2.8                         \\
+2.3        & 2.1                         \\
+3.1        & 1.6                         \\ \bottomrule
+\end{tabular}
+\end{table}
+Ao ajustar estes dados por uma curva hiperbólica, obtém-se $\varphi(x)=1/(0.3x+0.1)$. Ao se ajustar por uma reta, encontra-se $\varphi(x)=-x+4.3$. Segundo o critério dos mínimos dos desvios quadrados, qual dessas duas curvas se ajusta melhor a este fenômeno biológico? 
+\end{ex}
+
+
+
+%\end{questions}
+%
+%\end{document}

@@ -1,0 +1,67 @@
+
+\begin{ex}
+Classifique as seguintes equações diferenciais em ``equações diferenciais ordinárias'' ou ``equações diferenciais parciais''. Em seguida, determine a ordem de cada uma.
+%\begin{multicolumn}{3}
+\begin{enumerate}
+\item $y'=2x$
+\item $y''+x^2(y')^3-4y=0$
+\item $y'''+x^2+y^4=x \tan(x)$
+\item $(1+xe^{xy})\frac{dy}{dx} + 1 + y e^{xy}=0$
+\item $\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}=f^3(x,y)$
+\item $\frac{\partial^2 u}{\partial t^2}+\frac{\partial u}{\partial t}=u(t)$
+\end{enumerate}
+%\end{multicolumn}
+\end{ex}
+
+\begin{ex}\label{geral}
+Verifique que, para todo $c\in\mathbb{R}$, a função $y$ dada por $y(x)=ce^x+ x-1$ é solução da equação diferencial
+$$y'=y-x+2.$$
+Desenhe no \emph{Geogebra} alguns gráficos da função $y$ para alguns valores de $c$ (por exemplo, faça $c=1$, $c=2$, \emph{etc}. Se você souber usar o ``controle deslizante'' no \emph{Geogebra}, defina a variável $c$ desta forma).
+\end{ex}
+
+
+\begin{ex}\label{part}
+Determine uma solução particular para a equação diferencial mostrada na questão \ref{geral}, tendo como condição inicial a equação $y(0)=2$. Faça o gráfico desta solução particular.
+\end{ex}
+
+
+
+\begin{ex}\label{pvi1}
+Usando o método de Euler de ordem 1 e de ordem 2, determine a solução aproximada do PVI dado por
+$$\begin{cases}
+y'=f(x,y)=\frac{1}{x^2}-\frac{y}{x} - y^2\\
+y(x_0)=y(1)=-1.
+\end{cases},$$
+onde o domínio de $y$ é $[1,2]$.
+\begin{enumerate}
+\item Considerando $h_1=\frac{1}{5}$ e $h_2=\frac{1}{10}$.
+\item Sabendo-se que a solução analítica é dada por $y(x)=-\frac{1}{x}$ (verifique!), construa uma tabela que relaciona os valores exatos e os valores calculados pelos métodos de Euler de ordem 1 e 2.\label{tabela}
+\end{enumerate}
+\end{ex}
+
+
+\begin{ex}
+Seja $y$ uma função cujo domínio é $[0,2]$. Considere o seguinte PVI
+$$\begin{cases}
+y'=f(x,y)=y-x\\
+y(x_0)=y(0)=2
+\end{cases}.$$
+
+\begin{enumerate}
+\item Utilize os métodos de Euler de ordem 1 e de ordem 2 para achar uma aproximação da função $y$. Divida o domínio de $y$ em 2 partes e, em seguida, em 4 partes.
+\item Construa uma tabela similar à construída no item \ref{tabela} da questão \ref{pvi1}.
+\end{enumerate}
+\end{ex}
+
+
+
+\begin{ex}
+Verifique se $y(x)=\frac{x^2+3}{3}$ é solução para o PVI
+$$
+\begin{cases}
+y'=xy^{1/3}\\
+y(0)=1
+\end{cases}.
+$$
+\end{ex}
+

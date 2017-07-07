@@ -1,0 +1,243 @@
+\begin{Solucao}{1.1.1}
+\begin{enumerate}[label=\alph*)]
+\item $(11001)_2$
+\item $(1011)_2$
+\item $(1111)_2$
+\item $(0.0011)_2$
+\item $(11001.11)_2$
+\item $(0.10011001100110011...)_2.$ A única forma de representar este número exatamente é utilizando \emph{infinitos} algarismos. Em um computador com um número \emph{finito} de algarismos, esse número não pode ser exatamente representado.
+\end{enumerate}
+\end{Solucao}
+\begin{Solucao}{1.1.2}
+\begin{enumerate}[label=\alph*)]
+\item $(13)_{10}$
+\item $(7)_{10}$
+\item $(2)_{10}$
+\item $(0.375)_{10}$
+\item $(7.375)_{10}$
+\end{enumerate}
+\end{Solucao}
+\begin{Solucao}{1.1.3}
+\begin{enumerate}[label=\alph*)]
+\item $0.1\times 10^3.$
+\item $0.158\times 10^{-1}.$
+\item $0.101\times 2^3.$
+\end{enumerate}
+\end{Solucao}
+\begin{Solucao}{1.1.4}
+\begin{enumerate}[label=\alph*)]
+\item $0.12314*10^2$ ou $0.12314E+2$.
+\item $0.25000*10^{12}$ ou $0.25000E+12$.
+\item Na notação usual, $0.00019$. Na notação de ponto flutuante normalizado, $0.19*10^3$.
+\item $1000000$, ou $0.1*10^7$.
+\end{enumerate}
+\end{Solucao}
+\begin{Solucao}{1.1.5}
+\begin{enumerate}
+[label=\alph*)]
+\item $0.1*10^{-1}$.
+\item $0.9999*10^2$.
+%\item \emph{Dica}: Não se esqueça que o primeiro dígito após o ponto deve ser diferente de zero. Não se esqueça também de contar os números negativos e o zero.
+\item Região de \emph{overflow}: Todos os números maiores que $0.999*10^2$ e todos os números menores que $-0.999*10^2$. Região de \emph{underflow}: todos os números maiores que $-0.1*10^{-1}$ e menores que $0.1*10^{-1}$ (exceto o número zero).
+\end{enumerate}
+\end{Solucao}
+\begin{Solucao}{1.1.6}
+		\begin{align*}
+		&(((4+4)+4)+4)+56070\\
+		&=(((0.4*10^1+0.4*10^1)+4)+4)+56070\\
+		&=((0.8*10^1+0.4*10^1)+4)+56070\\
+		&=(0.12*10^2+0.4*10^1)+56070\\
+		&=(0.12*10^2+0.04*10^2)+56070\\
+		&=0.16*10^2+0.5607*10^5\\
+		&=0.00016*10^5+0.5607*10^5\\
+		&=0.56086*10^5\\
+		&=0.5609*10^5.
+		\end{align*}
+		Agora, para os cálculos de $(((56070+4)+4)+4)+4$, observe que $56070+4$ é calculado como
+		\begin{align*}
+		 &0.5607*10^5+0.4*10^1\\
+		 &=0.5607*10^5+0.00004*10^5\\
+		 &=0.56074*10^5\\
+		 &=0.5607*10^5.
+		\end{align*}Chegue à conclusão que a primeira expressão apresentada possui resultado diferente da segunda.
+	
+\end{Solucao}
+\begin{Solucao}{2.1.1}
+Pode sim ser escrita como sistema triangular. No caso,
+$$\begin{bmatrix}
+1&-1&3&8\\
+0&5&1&1\\
+0&0&4&-2\\
+0&0&0&10
+\end{bmatrix}.$$
+A solução é $X=\begin{bmatrix}
+-46&2&4&3\end{bmatrix}^t$.
+\end{Solucao}
+\begin{Solucao}{2.1.2}
+\begin{enumerate}[label=\alph*)]
+\item Primeiro reescrevo o sistema linear na forma da matriz aumentada,
+$$\begin{bmatrix}
+{\color{red}3}	& 2 & 3 & 9 \\
+-1			& 4 & 6	& 32 \\
+10			& 2 & 12 & -2
+\end{bmatrix}.$$
+O pivô é o elemento $a_{11}$, pintado de vermelho. Vou usar este pivô para ``zerar'' todos os elementos abaixo dele, por meio das \emph{operações fundamentais}.
+
+O primeiro passo é realizar as operações fundamentais $$L_2\leftarrow L_2 - \frac{-1}{{\color{red}3}}L_1$$ e $$L_3\leftarrow L_3 - \frac{10}{{\color{red}3}}L_1.$$ A matriz fica
+$$\begin{bmatrix}
+3			& 2 & 3 & 9 \\
+0			& {\color{red}14/3} & 7	& 35 \\
+0			& -14/3 & 2 & -32
+\end{bmatrix}.$$
+
+
+O segundo passo é usar o pivô $14/3$ para zerar todos os elementos abaixo dele. A operação fundamental é $$L_3\leftarrow L_3 - \frac{-14/3}{{\color{red}14/3}}L_1.$$
+A matriz fica
+$$\begin{bmatrix}
+3			& 2 & 3 & 9 \\
+0			& 14/3 & 7	& 35 \\
+0			& 0 & 9 & 3
+\end{bmatrix},$$
+que é uma matriz triangular, fácil de resolver.
+
+\item A matriz $A$, dada por $$A=\begin{bmatrix}
+3	&2	&3\\
+-1	&4	&6\\
+10	&2	&12
+\end{bmatrix},$$
+pode ser decomposta de maneira única como produto de uma matriz inferior $L$ e uma matriz superior $U$ desta forma:
+$$\begin{bmatrix}
+3	&2	&3\\
+-1	&4	&6\\
+10	&2	&12
+\end{bmatrix}=
+\begin{bmatrix}
+{\textcolor{red}1}	&{\textcolor{red}0}	&{\textcolor{red}0}\\
+{\textcolor{blue}-1/3 }	&{\textcolor{red}1}	&{\textcolor{red}0}\\
+{\textcolor{blue} 10/3 }	&{\textcolor{blue}-1}	&{\textcolor{red}1}
+\end{bmatrix}\times
+\begin{bmatrix}
+3	&2	&3\\
+0	&14/3	&7\\
+0	&0	&9
+\end{bmatrix}.$$
+Para construir a matriz $L$, eu tomei os {\textcolor{blue} multiplicadores} que foram utilizados no algoritmo de eliminação de Gauss. A matriz $U$ é simplesmente o resultado do algoritmo de Gauss.
+
+
+O problema original pode ser reescrito como
+$$\begin{bmatrix}
+{\textcolor{red}1}	&{\textcolor{red}0}	&{\textcolor{red}0}\\
+{\textcolor{blue}-1/3 }	&{\textcolor{red}1}	&{\textcolor{red}0}\\
+{\textcolor{blue} 10/3 }	&{\textcolor{blue}-1}	&{\textcolor{red}1}
+\end{bmatrix}\times
+\begin{bmatrix}
+3	&2	&3\\
+0	&14/3	&7\\
+0	&0	&9
+\end{bmatrix}\times
+\begin{bmatrix}
+x_1\\x_2\\x_3
+\end{bmatrix}=
+\begin{bmatrix}
+9\\32\\-2
+\end{bmatrix}.$$
+Agora precisamos apenas resolver os dois sistemas lineares \emph{triangulares}: o sistema $Ly=b$,
+$$\begin{bmatrix}
+{\textcolor{red}1}	&{\textcolor{red}0}	&{\textcolor{red}0}\\
+{\textcolor{blue}-1/3 }	&{\textcolor{red}1}	&{\textcolor{red}0}\\
+{\textcolor{blue} 10/3 }	&{\textcolor{blue}-1}	&{\textcolor{red}1}
+\end{bmatrix}\times
+\begin{bmatrix}
+a\\b\\c
+\end{bmatrix}=
+\begin{bmatrix}
+9\\32\\-2
+\end{bmatrix},$$
+cuja solução é $a=9, b=35, c=3$, e este outro, $Ux=y$,
+$$\begin{bmatrix}
+3	&2	&3\\
+0	&14/3	&7\\
+0	&0	&9
+\end{bmatrix}\times
+\begin{bmatrix}
+x_1\\x_2\\x_3
+\end{bmatrix}=
+\begin{bmatrix}
+9\\35\\3
+\end{bmatrix}
+$$
+cuja solução (que é a solução que procuramos) é $x_1=-2, x_2=7, x_3=1/3$.
+\end{enumerate}
+\end{Solucao}
+\begin{Solucao}{2.1.3}
+A matriz $A$ dos coeficientes, dada por $\begin{bmatrix}
+2&3\\4&5
+\end{bmatrix}$, pode ser decomposta como
+$$\begin{bmatrix}
+2&3\\4&5
+\end{bmatrix}=\begin{bmatrix}
+1&0\\2&1
+\end{bmatrix}\begin{bmatrix}
+2&3\\0&-1
+\end{bmatrix}.$$
+
+A solução do primeiro sistema é $X=\begin{bmatrix}
+1&1
+\end{bmatrix}^t$. A solução do segundo sistema é $X=\begin{bmatrix}
+-1&6
+\end{bmatrix}^t$.
+\end{Solucao}
+\begin{Solucao}{2.1.4}
+$-4$.
+\end{Solucao}
+\begin{Solucao}{2.2.1}
+\begin{enumerate}
+\item A análise pelo critério das linhas é inconclusiva.
+\item De acordo com o critério das linhas, o método de Gauss-Jacobi gera uma sequência convergente.
+
+
+Partindo da solução inicial $x^{(0)}=\begin{bmatrix}
+0&0&0
+\end{bmatrix}^t$, as candidatas a solução são $x^{(1)}=\begin{bmatrix}
+1.4&1&1.5
+\end{bmatrix}^t$ e $x^{(2)}=\begin{bmatrix}
+0.9&1.033&1
+\end{bmatrix}^t$.
+
+$d^{(1)}=1.5, d^{(2)}=0.5, d_r^{(1)}=1,d_r^{(2)}=0.484$.
+
+$||Ax^{(1)}-b||_\infty=2.5, ||Ax^{(2)}-b||_\infty=0.467$.
+\end{enumerate}
+
+%\begin{enumerate}
+%\item $\begin{bmatrix}
+%12&9\\18&45
+%\end{bmatrix}$
+%\item $\begin{bmatrix}
+%14&7\\32&43
+%\end{bmatrix}$
+%\item $\begin{bmatrix}
+%14\\5\\4
+%\end{bmatrix}$
+%\item Não é possível calcular.
+%\end{enumerate}
+\end{Solucao}
+\begin{Solucao}{2.2.2}
+\begin{enumerate}
+\item A análise pelo critério de Sasenfeld é inconclusiva.
+\item De acordo com o critério de Sassenfeld, o método de Gauss-Seidel gera uma sequência convergente.
+
+Partindo da aproximação inicial $x^{(0)}=\begin{bmatrix}
+0&0&0
+\end{bmatrix}^t$, temos $x^{(1)}=\begin{bmatrix}
+1.4& 0.5333 &1.2333
+\end{bmatrix}^t$ e $x^{(2)}=\begin{bmatrix}
+1.0467& 1.0622 &0.9689
+\end{bmatrix}^t$.
+\end{enumerate}
+\end{Solucao}
+\begin{Solucao}{3.1.1}
+\begin{enumerate}
+\item A escolha do intervalo que possui raiz é livre. Para esta solução, irei supor que o intervalo escolhido foi $[-2,0]$. Pelo algoritmo da bissecção, as duas primeiras iterações geram os intervalos $[-1,0]$ e $[-1,-0.5]$. Com o intervalo escolhido, a candidata inicial $x_0$ é $-1$. As duas primeiras candidatas a solução calculadas são $x_1=-0.5$ e $x_2=-0.75$. A diferença absoluta entre essas candidatas são $d_1=0.5$ e $d_2=0.25$.
+\end{enumerate}
+\end{Solucao}

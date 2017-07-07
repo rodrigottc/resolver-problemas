@@ -1,0 +1,82 @@
+Estas questões podem ser resolvidas pelo método de Lagrange (apresentada na aula 09) e pelo método de Newton (aula 10).
+
+
+
+%\begin{questions}
+%\begin{multicols}{2}
+
+%
+\begin{ex}
+Obtenha o polinômio de grau 2 para a aproximação de $f$ tendo os seguintes pontos calculados:
+\begin{table}[htb]
+\centering
+\caption{Alguns pontos da função $f$.}
+\label{fx}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+$x$    & -0.6  & -0.5 & 0 & 0.2 & 0.4 & 0.7 \\ \midrule
+$f(x)$ & -0.15 & -0.1 & 0 & 0.4 & 1   & 1.9 \\ \bottomrule
+\end{tabular}
+\end{table}
+\end{ex}
+
+\begin{ex}
+Considere a tabela \ref{exp} de alguns pontos da função $f$.
+\begin{table}[htb]
+\centering
+\caption{Alguns pontos da função $f$.}
+\label{exp}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+$x$    & 2.4  & 2.6 & 2.8 & 3.0 & 3.2 & 3.4 \\ \midrule
+$f(x)$ & 11.02 & 13.46 & 16.44 & 20.08 & 24.53   & 29.96 \\ \bottomrule
+\end{tabular}
+\end{table}
+\begin{enumerate}
+\item Calcule $f(3.1)$ usando um polinômio de interpolação sobre três pontos.
+\item Dê um limitante para o erro cometido.
+\end{enumerate}
+\end{ex}
+
+
+
+\begin{ex}
+Na questão \ref{poli} foi pedido para se determinar, por meio de resolução de um sistema linear, qual função polinomial de segundo grau passa pelos pontos $(1;5)$, $(3;11)$ e $(5;25)$. 
+
+Utilize a técnica de Lagrange para determinar novamente esta função polinomial de segundo grau. Compare a dificuldade entre estas duas abordagens.
+\end{ex}
+
+
+
+\begin{ex}
+Aproxime cada uma destas funções por um polinômio interpolador de grau 2 que passe pelos pontos $(0.5 , f(0.5) )$, $(1.0 , f(1.0))$ e $(1.5, f(1.5))$. Em seguida, trace no \emph{GeoGebra} os gráficos da função e do polinômio que a aproxima. Por último, estime o erro no cálculo de $f(1.34)$.
+\begin{enumerate}
+\item $f(x)=\sin(x)$
+\item $f(x)=\sqrt{2+x}$
+\item $f(x)=\ln(4+x)$
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Um grupo de técnicos fez uma série de experimentos em um laboratório no qual verificaram que as partículas de um determinado liquido perdem mobilidade (em $cm/s$) em função da temperatura (em graus Celsius). Os dados estão descritos na tabela \ref{quimica}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[hbt]
+\centering
+\caption{Experimentos sobre a mobilidade de um certo líquido.}
+\label{quimica}
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+Temperatura & 100.0  & 99.4   & 98.8   & 98.2   & 97.6   & 97.0   & 96.4   \\ \midrule
+Mobilidade  & 222.39 & 222.30 & 222.21 & 222.13 & 222.04 & 221.96 & 221.88 \\ \bottomrule
+\end{tabular}
+\end{table}
+Faça uma estimativa da mobilidade das partículas desse líquido quando aquecido a 98 graus Celsius. Faça uma estimativa da temperatura, por meio de um polinômio de grau 3, na qual se espera que a mobilidade seja de 222.35 $cm/s$.
+\end{ex}
+
+
+
+
+
+%\end{questions}

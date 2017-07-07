@@ -1,0 +1,112 @@
+%\documentclass[a4paper, 11pt, addpoints]{exam}
+%%\documentclass[a4paper, 11pt, addpoints, answers]{exam}  % Desconmente esta linha, para ver as respostas, e comente a de cima
+%\usepackage{listaufersa}
+%\usepackage{listings} % Mostrar código-fonte
+%\usepackage[brazil]{babel}
+%\usepackage{multicol}
+%\usepackage{booktabs}
+%\usepackage{hyperref}
+%
+%\setlength{\columnsep}{25pt}
+%\lstdefinestyle{js}{
+%    basicstyle=\ttfamily,
+%    breaklines=true,
+%    breakatwhitespace=true,
+%    tabsize=1,
+%    resetmargins=true,
+%    xleftmargin=0pt,
+%    frame=none
+%}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\pointpoints{Ponto}{Pontos}
+%
+%\begin{document}
+%
+%
+%%%%%%%%%% Informações sobre o curso %%%%%%%%%%%%%
+%
+%
+%\nomeProfessor{Rodrigo Toledo Teixeira Câmara}
+%\nomeCurso{Bacharelado em Ciências e Tecnologias}
+%\nomeDisciplina{Cálculo Numérico}
+%\semestre{5}   % Deixe em branco se for para mais de um semestre (recuperação)
+%\dataDaProva{2016.2}
+%\tipoAvaliacao{lista da aula 07}
+%
+%\info
+%\vspace{-0.5 cm}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%\begin{questions}
+%%\begin{multicols}{2}
+
+
+\begin{ex}
+Considere a função dada $f$ dada por $$f(x)=x^6+4x^2-20.$$
+\begin{enumerate}
+\item Trace o gráfico desta função no \emph{GeoGebra}  e estime a menor raiz positiva. 
+\item Utilizando a forma geral $$\varphi(x)=x+A(x)f(x),$$ com $A(\xi)\neq 0$, construa três funções iterativas $\varphi$.
+\item Verifique se alguma destas funções iterativas converge para a menor raiz positiva de $f$.
+\item Determine a função $\varphi$ conforme proposta pelo método de Newton-Raphson.
+\item Calcule as duas primeiras iterações deste método.
+\end{enumerate}
+\end{ex}
+
+
+
+
+
+
+\begin{ex}
+Encontre a raiz quadrada de 7 com treze algarismos significativos. Dica: a raiz quadrada de $a$ é encontrada ao se calcular a raiz da função $f(x)=x^2-a$.
+\end{ex}
+
+\begin{ex}
+Encontre a raiz cúbica de 10 com treze algarismos significativos. Dica: a raiz $n$-ésima de $a$ é encontrada ao se calcular a raiz da função $f(x)=x^n-a$.
+\end{ex}
+
+%\begin{ex}
+%A velocidade de um paraquedista, após abrir o paraquedas, é dada pela equação
+%$$v(t)=\frac{gm(1-e^{-(\frac{ct}{m})})}{c},$$
+%onde \begin{itemize}
+%\item $v$ é a velocidade absoluta em $m/s$ do paraquedista, 
+%\item $g$ é a aceleração da gravidade, 
+%\item $m$ é a massa do paraquedista (já com o equipamento), 
+%\item $t$ é o tempo em segundos após a abertura do paraquedas e 
+%\item $c$ é o coeficiente de amortecimento, em $kg/s$, que depende, principalmente, do paraquedas.
+%\end{itemize}
+%Considerando a aceleração da gravidade como $9.8 m/s^2$, a massa do paraquedista com o equipamento é 100$kg$ e que ele atinge a velocidade de $40 m/s$ sete segundos após abrir o paraquedas, encontre o coeficiente de amortecimento deste paraquedas.
+%\end{ex}
+
+\begin{ex}
+A equação que relaciona a taxa de juros $i$ com o valor à vista $PV$, o valor fixo\footnote{Este método de pagamento, que envolve prestações iguais, é conhecido como o \emph{sistema Price}.} $PMT$ de cada parcela e a quantidade de parcelas $n$ é
+$$PMT=PV\frac{i(1+i)^n}{(1+i)^n-1}.$$
+Supondo que uma geladeira é vendida à vista por R$\$1500,00$ e que a loja permite o pagamento em doze parcelas iguais de R$\$150,00$, calcule a taxa de juros deste financiamento. 
+\end{ex}
+
+\begin{ex}
+Um espectrômetro analisou as ondas de uma certa transmissão de rádio e as descreveu como a seguinte função senoidal:
+$$y(x)=x^3\sin(x)+\cos(x)+3.$$
+Trace esta função no \emph{GeoGebra} para observar uma representação visual destas ondas da rádio. 
+
+
+O \emph{comprimento de onda}, $\lambda$, em metros, é definido, neste contexto, como o dobro da distância horizontal entre duas raízes consecutivas desta função. A \emph{frequência} $f$, em hertz, é dada por
+$$f=\frac{c}{\lambda},$$
+onde $c$ é a velocidade da luz, dada por $c=3\times 10^8 m/s$.
+
+
+Determine a frequência desta transmissão de rádio.
+\end{ex}
+%
+%\end{questions}
+%
+%\end{document}
