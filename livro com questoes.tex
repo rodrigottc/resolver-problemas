@@ -1,0 +1,172 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\author{Rodrigo Câmara}
+
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{booktabs}
+
+\usepackage[pdftex]{hyperref}
+\usepackage{import}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{answers}
+\graphicspath{{fig/}}
+
+
+\Newassociation{sol}{Solucao}{ans}
+\theoremstyle{definition}
+\newtheorem{ex}{Q}[section]
+\title{Exercícios e problemas de Cálculo Numérico}
+\begin{document}
+\frenchspacing
+
+\maketitle
+\tableofcontents
+\Opensolutionfile{ans}[ans1]
+\chapter*{Introdução}
+%\addcontentsline{toc}{chapter}{Introdução}
+
+Este livro traz uma coleção de exercícios e problemas sobre Cálculo Numérico, desenvolvidos para alunos de graduação. As questões foram ou elaboradas por mim ou adaptadas de livros didáticos\footnote{ARENALES, Selma; DAREZZO, Artur. \emph{Cálculo numérico: aprendizagem com apoio de software}. Cengage Learning, 2008.\\ RUGGIERO, Márcia A. Gomes; LOPES, Vera Lúcia da Rocha. \emph{Cálculo numérico: aspectos teóricos e computacionais}. Makron Books do Brasil, 1997.\\ BURIAN, Reinaldo; DE LIMA, Antonio Carlos; JÚNIOR, Annibal Hetem. \emph{Cálculo numérico}. Livros Técnicos e Científicos, 2007.}. Alguns exercícios (não todos) possuem a solução nas páginas finais. Observe que é \emph{apenas} a solução. Cabe ao aluno escrever o encadeamento de argumentos que levam à ela.
+
+Este material é \emph{grátis} e \emph{livre}, sob a licença \emph{GNU General Public License v3.0}. Isso significa que você pode utilizar e modificar este trabalho à vontade, desde que dê os devidos créditos. Eu também gostaria de receber críticas, sugestões e relatos de sua experiência utilizando este livro, seja você aluno ou professor. Entre em contato comigo pelo email \url{rodrigo.camara@ufersa.edu.br}. O código fonte deste livro, escrito em linguagem \LaTeX, está disponível em \url{https://github.com/rodrigottc/resolver-problemas}.
+
+Preciso avisar que este livro está em versão \emph{beta}, ou seja, ainda está \emph{incompleto} e possivelmente com erros. Por favor, caso encontre algum, avise-me. Verifique sempre a data que consta na primeira página.
+
+
+Este livro foi feito por dois motivos: o primeiro, e mais importante, é oferecer uma forma fácil para que os alunos de graduação do curso \emph{Cálculo Numérico} tenham acesso aos exercícios. Não canso de enfatizar a importância de exercitar o que foi aprendido em aula. Como um professor uma vez me ensinou, ``aprender Matemática é como aprender a nadar: não basta apenas ver''. 
+
+
+O segundo motivo é puramente por organização própria. Percebi que se não encontrasse uma forma de reunir as questões que elaborei, elas possivelmente se perderiam no meio de códigos e arquivos duplicados no meu computador.
+
+
+%Você notará que algumas questões são parecidas, com apenas mudanças em alguns valores. Isso é proposital. Resolvi seguir esta abordagem por perceber que, sem repetição de questões parecidas, os alunos enxergam padrões onde não deveria existir.
+\subsection*{Como usar este livro}
+As questões são divididas em dois tipos: \emph{exercícios} e \emph{problemas}. As do tipo \emph{Exercícios} trazem questões simples e têm a finalidade de treinar o aluno para a teoria nova. As do tipo \emph{Problemas} são as mais interessantes. Cada problema vai exigir criatividade para relacionar o que ele aprendeu nos exercícios com o que está sendo pedido.
+
+
+A resolução de problemas matemáticos é de preponderante importância para a educação, pois oferece suporte à curiosidade dos estudantes, ao mesmo tempo em que traz situações reais para a sala de aula, propicia a possibilidade da descoberta do novo e incentiva o gosto pelo desafio mental. Segundo George Polya, matemático húngaro considerado percurssor desta didática, 
+
+\begin{quotation}
+``Uma grande descoberta resolve um grande problema, mas há sempre uma pitada de descoberta na resolução de qualquer problema. O problema pode ser modesto, mas se ele desafiar a curiosidade e puser em jogo as faculdades inventivas, quem o resolver por seus próprios meios, experimentará a tensão e gozará o triunfo da descoberta. Experiências tais, numa idade susceptível, poderão gerar o gosto pelo trabalho mental e deixar, por toda a vida, a sua marca na mente e no caráter\footnote{POLYA, G. A arte de resolver problemas. 2a reimpressão, 2a . ed. Rio de Janeiro:
+Interciência, 1995.}''.
+\end{quotation}
+Recomendo a leitura da obra de Polya, mas, resumidamente, ele propõe a seguinte estratégia para resolver problemas:
+\begin{quote}
+\subsubsection{1. Entenda o problema}
+        Primeiro, você tem de entender o problema:
+\begin{itemize}
+\item        Qual é a incógnita? Quais são os dados? Quais são as condições? Mais importante: descubra o que está sendo pedido!
+\item        É possível responder o que está sendo pedido? As condições são suficientes para determinar a incógnita? Ou são insuficientes? Ou redundantes? Ou contraditórias?
+\item        Faça uma figura. Outra se necessário. Introduza notação adequada.
+\item        Separe as condições em partes
+\end{itemize}
+
+\subsubsection{2. Construa uma estratégia de resolução}    
+Ache conexões entre os dados e a incógnita. Talvez seja conveniente considerar problemas auxiliares ou particulares, se uma conexão não for achada em tempo razoável. Use isso para ``bolar'' um plano ou estratégia de resolução do problema.
+\begin{itemize}
+
+ \item        Você já encontrou este problema ou algum parecido?
+  \item      Você conhece um problema semelhante? Conhece teoremas ou fórmulas que possam ajudar?
+ \item        Olhe para a incógnita! Tente achar um problema familiar e que tenha uma incógnita semelhante
+ \item       Digamos que você encontrou um problema, já resolvido, relacionado com o seu. É possível aproveitá-lo? Reutilizar o método? Deve-se introduzir algum elemento auxiliar de modo a viabilizar esses objetivos?
+  \item      Você consegue enunciar o problema de uma outra maneira?
+ \item       Se não consegue resolver o problema dado, tente resolver um problema parecido. Você consegue imaginar um caso particular mais acessível? Um caso mais geral e mais acessível? Consegue resolver alguma parte do problema? Mantenha apenas parte das condições do problema e observe o que ocorre com a incógnita, como ela varia agora? Você consegue obter alguma coisa desde os dados? Consegue imaginar outros dados capazes de produzir a incóognita? Consegue alterar a incógnita ou os dados, ou ambos, de modo que a nova incógnita e os novos dados fiquem mais próximos?
+ \item       Você está levando em conta todos os dados? E todas as condições?
+\end{itemize}
+
+
+    \subsubsection{3. Execute a estratégia}
+
+    Frequentemente, esta é a etapa mais fácil do processo de resolução de um problema. Contudo, a maioria dos principiantes tendem a pular para essa etapa prematuramente, e acabam dando-se mal. Outros elaboram estratégias inadequadas e acabam se enredando terrivelmente na execução.
+
+\begin{itemize}
+ \item      Execute a estratégia.
+  \item      Ao executar a estratégia, verifique cada passo. Você consegue mostrar claramente que cada um deles está correto?
+
+\end{itemize}
+
+    \subsubsection{4. Revise}
+Examine a solução obtida.
+\begin{itemize}
+\item        Verifique o resultado e o argumento
+\item        Você pode obter a solução de um outro modo?
+\item        Qual a essência do problema e do método de resolução empregado? Em particular, Você consegue usar o resultado, ou o método, em algum outro problema?
+\end{itemize}
+\end{quote}
+Espero que este material que você tem em mãos o auxilie neste curso. Qualquer dúvida, não hesite em conversar comigo. Estou na sala 11 do bloco 1 e respondo os \emph{emails} enviados para \url{rodrigo.camara@ufersa.edu.br} o mais rápido possível.
+
+\begin{flushright}
+-- Rodrigo Câmara.
+\end{flushright}
+\chapter*{Histórico de mudanças}
+\begin{description}
+\item[26/06/17] \begin{itemize}
+\item Primeira versão publicada. O capítulo \ref{ch.erros} sobre erros está completamente utilizável. 
+\end{itemize}
+\item[05/07/17] Os capítulos \ref{ch.sl} e \ref{ch.funcao} estão completos. Com isso, toda Parte I está utilizável.
+\begin{itemize}
+\item Mudei algumas funções da questão \ref{primeirasitbi}. Algumas delas não tinham raízes.
+\item Novo problema: Q \ref{prob.coluna}. Esse problema foi usado pela primeira vez em 2016.1. Esta versão foi simplificada.
+\item Novo problema: Q \ref{prob.matfin}, sobre matemática financeira.
+\item Novo problema: Q \ref{prob.vigas}, um elegante (e desafiador) problema escrito por RUGGIERO.
+\item Novo problema: Q \ref{ex.quimica}, sobre balanço de reações químicas.
+\item Novo problema: Q \ref{ex.forno}, um problema baseado na monografia do aluno Pedro Henrique, da UFERSA Angicos.
+\item Troquei a ordem dos capítulos sobre sistemas lineares e sobre raízes de funções, para seguir a ordem apresentada em ARENALES.
+\item Mais soluções para exercícios sobre resolução de sistemas lineares por métodos diretos.
+\item Correção do gabarito da questão \ref{ex.normalizada}.
+\end{itemize}
+\end{description}
+\part{Primeira unidade}
+\chapter{Noções básicas sobre erros}\label{ch.erros}
+\import{./}{aritmetica.tex}
+\chapter{Métodos para encontrar solução de sistema linear}\label{ch.sl}
+	\section{Métodos diretos}
+\import{./}{metodosdiretos.tex}
+	\section{Métodos iterativos}
+\import{./}{iterativos.tex}
+\chapter{Métodos para encontrar raiz de função}\label{ch.funcao}
+\import{./}{bisseccao.tex}
+
+
+%\import{./}{pontofixo.tex}
+\part{Segunda unidade}
+\chapter{Aproximação de funções}
+
+	\section{Interpolação de funções}
+	\import{./}{interpolacao.tex}
+	\section{Ajuste de curvas pelo critério dos mínimos quadrados}
+	\import{./}{minimosquadrados.tex}
+	\import{./}{interpolacao_e_minqua.tex}
+	\import{./}{minimosquadrados2.tex}
+	\import{./}{aproxteoria.tex}
+\part{Terceira unidade}
+\chapter{Integração numérica}
+	\section{Regra do trapézio}
+	\import{./}{trapezios.tex}
+	\section{Regra de 1/3 de Simpson}
+	\import{./}{simpson.tex}
+\chapter{Resolução numérica de equações diferenciais ordinárias}
+	\section{Métodos de Euler}
+	\import{./}{edeuler.tex}	
+	\section{Métodos de Runge-Kutta}
+	\import{./}{rungekutta.tex}
+
+
+
+
+\Closesolutionfile{ans}
+\appendix
+\chapter{Soluções}
+%\begin{multicols}{2}
+\input{ans1}
+%\end{multicols}
+\end{document}
